@@ -16,11 +16,12 @@ build:
     # GitHub provided tarballs do not contain the metadata required by setuptools_scm.
     # We therefore manually inject the (known) version number into the build environment.
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - python                              # [build_platform != target_platform]
     - cmake
