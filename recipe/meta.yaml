@@ -16,7 +16,7 @@ build:
     # GitHub provided tarballs do not contain the metadata required by setuptools_scm.
     # We therefore manually inject the (known) version number into the build environment.
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  number: 1
+  number: 2
 
 requirements:
   build:
