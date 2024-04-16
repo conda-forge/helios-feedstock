@@ -11,12 +11,11 @@ source:
   sha256: 7dece5bdaf3634af9efbf134d357514f5af73586498275e7c218f1673bd1f0b7
 
 build:
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
   script_env:
     # GitHub provided tarballs do not contain the metadata required by setuptools_scm.
     # We therefore manually inject the (known) version number into the build environment.
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  number: 0
+  number: 1
 
 requirements:
   build:
