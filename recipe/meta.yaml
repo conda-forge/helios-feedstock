@@ -11,11 +11,14 @@ source:
   sha256: 7dece5bdaf3634af9efbf134d357514f5af73586498275e7c218f1673bd1f0b7
 
 build:
+  entry_points:
+    - helios = pyhelios.__main__:helios_entrypoint
+    - helios-live = pyhelios.live:helios_live
   script_env:
     # GitHub provided tarballs do not contain the metadata required by setuptools_scm.
     # We therefore manually inject the (known) version number into the build environment.
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -55,6 +58,8 @@ test:
     - pip
   commands:
     - pip check
+    - helios --help
+    - helios-live --help
 
 about:
   home: https://github.com/3dgeo-heidelberg/helios
