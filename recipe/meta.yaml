@@ -14,11 +14,12 @@ build:
   entry_points:
     - helios = pyhelios.__main__:helios_entrypoint
     - helios-live = pyhelios.live:helios_live
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   script_env:
     # GitHub provided tarballs do not contain the metadata required by setuptools_scm.
     # We therefore manually inject the (known) version number into the build environment.
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  number: 2
+  number: 3
 
 requirements:
   build:
