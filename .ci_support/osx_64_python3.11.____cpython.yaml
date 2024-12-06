@@ -13,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '17'
+- '18'
 libblas:
 - 3.9 *netlib
 libboost_devel:
@@ -21,7 +21,7 @@ libboost_devel:
 libboost_python_devel:
 - '1.86'
 libgdal:
-- '3.9'
+- '3.10'
 liblapack:
 - 3.9 *netlib
 macos_machine:
@@ -36,8 +36,5 @@ target_platform:
 - osx-64
 tinyxml2:
 - '10'
-zip_keys:
-- - python
-  - channel_sources
 zlib:
 - '1'

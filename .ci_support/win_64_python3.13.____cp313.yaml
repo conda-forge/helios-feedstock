@@ -1,7 +1,7 @@
 c_stdlib:
 - vs
 channel_sources:
-- conda-forge/label/python_rc,conda-forge
+- conda-forge
 channel_targets:
 - conda-forge helios_dev
 cxx_compiler:
@@ -13,7 +13,7 @@ libboost_devel:
 libboost_python_devel:
 - '1.86'
 libgdal:
-- '3.9'
+- '3.10'
 liblapack:
 - 3.9 *netlib
 pin_run_as_build:
@@ -26,8 +26,5 @@ target_platform:
 - win-64
 tinyxml2:
 - '10'
-zip_keys:
-- - python
-  - channel_sources
 zlib:
 - '1'
