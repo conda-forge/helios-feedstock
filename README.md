@@ -189,14 +189,14 @@ Current release info
 Installing helios
 =================
 
-Installing `helios` from the `conda-forge/label/helios_dev` channel can be achieved by adding `conda-forge/label/helios_dev` to your channels with:
+Installing `helios` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
-conda config --add channels conda-forge/label/helios_dev
+conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/helios_dev` channel has been enabled, `helios` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `helios` can be installed with `conda`:
 
 ```
 conda install helios
@@ -211,26 +211,26 @@ mamba install helios
 It is possible to list all of the versions of `helios` available on your platform with `conda`:
 
 ```
-conda search helios --channel conda-forge/label/helios_dev
+conda search helios --channel conda-forge
 ```
 
 or with `mamba`:
 
 ```
-mamba search helios --channel conda-forge/label/helios_dev
+mamba search helios --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search helios --channel conda-forge/label/helios_dev
+mamba repoquery search helios --channel conda-forge
 
 # List packages depending on `helios`:
-mamba repoquery whoneeds helios --channel conda-forge/label/helios_dev
+mamba repoquery whoneeds helios --channel conda-forge
 
 # List dependencies of `helios`:
-mamba repoquery depends helios --channel conda-forge/label/helios_dev
+mamba repoquery depends helios --channel conda-forge
 ```
 
 
