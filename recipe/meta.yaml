@@ -1,5 +1,5 @@
 {% set name = "helios" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: helios-{{ version }}.tar.gz
   url:  https://github.com/3dgeo-heidelberg/helios/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f18cfbff80c677291b6b4eb38eda0ec69c49667b32f733e6a108163b5db62ac2
+  sha256: 0722c201775d787074b495170abef80a38b0ecc51c262a02bb687f2f35a69bb5
 
 build:
   entry_points:
