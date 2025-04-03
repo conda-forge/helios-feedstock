@@ -15,7 +15,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 libblas:
-- 3.9 *netlib
+- 3.9.* *netlib
 libboost_devel:
 - '1.86'
 libboost_python_devel:
@@ -23,7 +23,7 @@ libboost_python_devel:
 libgdal:
 - '3.10'
 liblapack:
-- 3.9 *netlib
+- 3.9.* *netlib
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -33,6 +33,6 @@ python:
 target_platform:
 - linux-64
 tinyxml2:
-- '10'
+- '11.0'
 zlib:
 - '1'
