@@ -1,5 +1,5 @@
 {% set name = "helios" %}
-{% set version = "2.0.2" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,8 +7,8 @@ package:
 
 source:
   fn: helios-{{ version }}.tar.gz
-  url:  https://github.com/3dgeo-heidelberg/helios/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3f1c9d87f130576b983e1eb7e2bc228a33f1ce34f15f5413c2f5f356af3f5539
+  url: https://github.com/3dgeo-heidelberg/helios/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 01dc72ee3221d876cdce97bc1995b64c9a9b1c39a23926431531b7eee7ef01ba
 
 build:
   entry_points:
@@ -19,7 +19,7 @@ build:
     # GitHub provided tarballs do not contain the metadata required by setuptools_scm.
     # We therefore manually inject the (known) version number into the build environment.
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -45,7 +45,7 @@ requirements:
     - tinyxml2
     - zlib
   run:
-    - importlib_resources  
+    - importlib_resources
     - lastools
     - libgdal
     - matplotlib-base
