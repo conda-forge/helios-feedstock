@@ -1,5 +1,5 @@
 {% set name = "helios" %}
-{% set version = "2.1.0" %}
+{% set version = "3.0.0a0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,18 +8,17 @@ package:
 source:
   fn: helios-{{ version }}.tar.gz
   url: https://github.com/3dgeo-heidelberg/helios/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 01dc72ee3221d876cdce97bc1995b64c9a9b1c39a23926431531b7eee7ef01ba
+  sha256: bfb82e06bd63d9ccb357b876b999ac1df335715d80d8c48cbed5410e4e11af3f
 
 build:
   entry_points:
-    - helios = pyhelios.__main__:helios_entrypoint
-    - helios-live = pyhelios.live:helios_live
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+    - helios = helios.__main__:cli
+  script: {{ PYTHON }} -m pip install . --no-deps --config-settings=cmake.define.BUILD_TESTING="OFF" -vv
   script_env:
     # GitHub provided tarballs do not contain the metadata required by setuptools_scm.
     # We therefore manually inject the (known) version number into the build environment.
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -35,32 +34,38 @@ requirements:
     - lastools
     - libblas
     - liblapack
-    - libboost-python-devel
     - libboost-devel
     - libgdal
     - pip
+    - pybind11
     - python
     - scikit-build-core
     - setuptools_scm
     - tinyxml2
     - zlib
   run:
+    - backports.strenum
+    - click
+    - click-option-group
     - importlib_resources
+    - laspy
     - lastools
     - libgdal
     - matplotlib-base
+    - numpydantic
+    - pint
+    - pydantic
     - python
     - xmlschema
 
 test:
   imports:
-    - pyhelios
+    - helios
   requires:
     - pip
   commands:
     - pip check
     - helios --help
-    - helios-live --help
 
 about:
   home: https://github.com/3dgeo-heidelberg/helios
