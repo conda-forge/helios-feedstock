@@ -36,5 +36,8 @@ target_platform:
 - osx-64
 tinyxml2:
 - '11.0'
+zip_keys:
+- - python
+  - channel_sources
 zlib:
 - '1'
