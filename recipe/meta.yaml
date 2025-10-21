@@ -13,7 +13,9 @@ source:
 build:
   entry_points:
     - helios = helios.__main__:cli
-  script: {{ PYTHON }} -m pip install . --no-deps --config-settings=cmake.define.BUILD_TESTING="OFF" -vv
+  # NB: The -D_LIBCPP_DISABLE_AVAILABILITY flag originates from https://conda-forge.org/docs/maintainer/knowledge_base/#newer-c-features-with-old-sdk
+  #     It will become obsolete once the conda infrastructure upgrades to 10.15 MacOS SDK.
+  script: {{ PYTHON }} -m pip install . --no-deps --config-settings=cmake.define.BUILD_TESTING="OFF" --config-settings=cmake.define.CMAKE_CXX_FLAGS="-D_LIBCPP_DISABLE_AVAILABILITY" -vv
   script_env:
     # GitHub provided tarballs do not contain the metadata required by setuptools_scm.
     # We therefore manually inject the (known) version number into the build environment.
