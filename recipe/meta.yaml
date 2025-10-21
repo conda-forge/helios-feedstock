@@ -8,7 +8,7 @@ package:
 source:
   fn: helios-{{ version }}.tar.gz
   url: https://github.com/3dgeo-heidelberg/helios/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: bfb82e06bd63d9ccb357b876b999ac1df335715d80d8c48cbed5410e4e11af3f
+  sha256: f4f93d761a30a4437efd387e179bbe33be1bb4c58bc0f012a126f00679208f44
 
 build:
   entry_points:
