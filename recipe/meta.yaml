@@ -8,7 +8,7 @@ package:
 source:
   fn: helios-{{ version }}.tar.gz
   url: https://github.com/3dgeo-heidelberg/helios/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f4f93d761a30a4437efd387e179bbe33be1bb4c58bc0f012a126f00679208f44
+  sha256: d98c8db2052e8c50831e11c5851f80d2b4c1178fe986d27fe658ea315af52c78
 
 build:
   entry_points:
@@ -32,6 +32,7 @@ requirements:
     - make
   host:
     - armadillo
+    - cereal
     - glm <1.0
     - lastools
     - libblas
@@ -51,7 +52,7 @@ requirements:
     - click-option-group
     - importlib_resources
     - laspy
-    - lastools
+    - lastools >=2.0.4
     - libgdal
     - matplotlib-base
     - numpydantic
