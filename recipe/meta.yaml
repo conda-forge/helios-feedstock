@@ -46,7 +46,7 @@ requirements:
     - zlib
   run:
     - importlib_resources
-    - lastools
+    - lastools <2.0.4
     - libgdal
     - matplotlib-base
     - python
