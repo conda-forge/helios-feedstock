@@ -1,15 +1,15 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '10.13'
+- '11.0'
 MACOSX_SDK_VERSION:
-- '10.13'
+- '11.0'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
-- '10.13'
+- '11.0'
 channel_sources:
-- conda-forge,conda-forge/label/python_rc
+- conda-forge
 channel_targets:
-- conda-forge main
+- conda-forge helios_dev
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
@@ -17,11 +17,9 @@ cxx_compiler_version:
 libblas:
 - 3.9.* *netlib
 libboost_devel:
-- '1.86'
-libboost_python_devel:
-- '1.86'
+- '1.88'
 libgdal:
-- '3.11'
+- '3.12'
 liblapack:
 - 3.9.* *netlib
 macos_machine:
@@ -36,8 +34,5 @@ target_platform:
 - osx-64
 tinyxml2:
 - '11.0'
-zip_keys:
-- - python
-  - channel_sources
 zlib:
 - '1'
