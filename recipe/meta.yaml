@@ -1,5 +1,5 @@
 {% set name = "helios" %}
-{% set version = "3.0.0a0" %}
+{% set version = "3.0.0a1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: helios-{{ version }}.tar.gz
   url: https://github.com/3dgeo-heidelberg/helios/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d98c8db2052e8c50831e11c5851f80d2b4c1178fe986d27fe658ea315af52c78
+  sha256: 048ce4a54b7ac8725ab55c409365a0f44c3638503d206d1785e2a4438de76f5a
 
 build:
   entry_points:
@@ -50,7 +50,9 @@ requirements:
     - backports.strenum
     - click
     - click-option-group
+    - clickqt-utils
     - importlib_resources
+    - jsonschema
     - laspy
     - lastools >=2.0.4
     - libgdal
@@ -59,6 +61,8 @@ requirements:
     - pint
     - pydantic
     - python
+    - tqdm
+    - vedo
     - xmlschema
 
 test:
