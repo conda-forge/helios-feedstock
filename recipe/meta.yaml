@@ -60,7 +60,9 @@ requirements:
     - numpydantic
     - pint
     - pydantic
+    - pygments
     - python
+    - pyyaml
     - tqdm
     - vedo
     - xmlschema
